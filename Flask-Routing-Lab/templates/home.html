@@ -3,18 +3,62 @@
 <head>
     <meta charset="UTF-8">
     <title>Home</title>
+    <link rel="stylesheet" type="text/css" href="static/css/style.css">
+    <style>
+        /* Add carousel styles */
+        .carousel-container {
+            max-width: 400px;
+            overflow: hidden;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .carousel {
+            display: flex;
+            transition: transform 1s ease;
+        }
+
+        .carousel img {
+            width: 100%;
+            height: 250px;
+        }
+    </style>
 </head>
-<link rel="stylesheet" type="text/css" href="static/css/style.css">
 <body>
     <h1>Gur's supermarket</h1>
-    <a href="/product">Products</a> <a href="/cart">cart</a><br><br><br>
-    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1b/EBay_logo.svg/2560px-EBay_logo.svg.png" width="100" height="40"/>
-    <p> welcome to Gur's supermarket: you can enjoy fresh produce, frozen food, great drinks</p>
-    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQocrHavgFrfLPtHnenHhX5rhZHL4wOLcNA5MeflQRn9wQx2Y8nlptO9Gs6ss8J9oa5yPA&usqp=CAU" height="250" width="400">
-    <p> frozen food</p>
-    <img src="https://cdn.britannica.com/17/196817-050-6A15DAC3/vegetables.jpg" height="250" width="400">
-    <p>fresh produce</p>
-    <img src="https://i0.wp.com/businessday.ng/wp-content/uploads/2020/03/soft-drink.jpg?fit=703%2C388&ssl=1" height="250" width="400">
-    <p>drinks</p>
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1b/EBay_logo.svg/2560px-EBay_logo.svg.png" alt="eBay logo" height="200" width="300"><br><br><br>
+    <a href="/product">Products</a> <a href="/cart">Cart</a><br><br><br>
+    <div class="carousel-container">
+        <div class="carousel">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQocrHavgFrfLPtHnenHhX5rhZHL4wOLcNA5MeflQRn9wQx2Y8nlptO9Gs6ss8J9oa5yPA&usqp=CAU" alt="frozen food">
+            <img src="https://cdn.britannica.com/17/196817-050-6A15DAC3/vegetables.jpg" alt="fresh produce">
+            <img src="https://i0.wp.com/businessday.ng/wp-content/uploads/2020/03/soft-drink.jpg?fit=703%2C388&ssl=1" alt="drinks">
+            <img src="https://www.visittci.com/core/graceway-gourmet-dairy_2048x1365.jpg" alt="supermarket">
+            <img src="https://www.goodnes.com/sites/g/files/jgfbjl321/files/styles/gdn_hero_pdp_product_image/public/gdn_product/field_product_images/digiorno-30a49779110ec80a3af2e6082010561b0dc1a649.png.webp?itok=FKHDpPVk" alt="pizza">
+            <img src="https://i5.walmartimages.com/asr/23d600ee-cb41-433c-8233-dc1a45b54bd7.7279dc7c4c5398497525aeaa93ec8f3f.jpeg" alt="walmart1">
+            <img src="https://shoppy.co.il/cdn/shop/products/frozencrispyschnitzel_1200x1200.png?v=1639284104" alt="schnitzel">
+            <img src="https://www.almanac.com/sites/default/files/styles/or/public/image_nodes/cucumbers.jpg?itok=WJ4TKfY0" alt="cucumbers">
+            <img src="https://nationaltoday.com/wp-content/uploads/2022/08/21-Fresh-Tomato-Day.jpg" alt="tomato">
+            <img src="https://images.jpost.com/image/upload/f_auto,fl_lossy/c_fill,g_faces:center,h_428,w_640/541837"alt="carrot">
+            <img src="https://waterbutlers.com/cdn/shop/products/water_600x.jpg?v=1591217018" alt="water">
+            <img src="https://www.goodnes.com/sites/g/files/jgfbjl321/files/styles/gdn_hero_pdp_product_image/public/gdn_product/field_product_images/nesquik-hohbqjdajf8qiyziuil2.png.webp?itok=80AwzfaY" alt="choclate milk">
+            <img src="https://www.minutemaid.ca/images/products/MM_Original_LowPulp_OrangeJuice_Carton_ENG.jpg" alt="milk">
+        </div>
+    </div>
+    <p>Welcome to Gur's supermarket: you can enjoy fresh produce, frozen food, great drinks</p>
+
+    <script>
+        // JavaScript to handle the carousel
+        const carousel = document.querySelector(".carousel");
+        let counter = 0;
+
+        function slideCarousel() {
+            carousel.style.transition = "transform 1s ease";
+            carousel.style.transform = `translateX(-${counter * 400}px)`;
+            counter = (counter + 1) % 4;
+        }
+
+        setInterval(slideCarousel, 3000); // Change image every 3 seconds
+    </script>
 </body>
 </html>
